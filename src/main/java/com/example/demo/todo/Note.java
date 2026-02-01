@@ -3,6 +3,10 @@ package com.example.demo.todo;
 import jakarta.persistence.*;
 import lombok.Data;
 
+/*
+Models.py
+ */
+
 @Entity
 @Data // This automatically generates Getters and Setters
 public class Note {

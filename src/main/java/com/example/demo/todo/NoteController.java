@@ -6,6 +6,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/*
+
+Views.py + urls.py
+ */
+
 @RestController
 @RequestMapping("/api/notes") // This is the base URL (like urls.py)
 public class NoteController {
