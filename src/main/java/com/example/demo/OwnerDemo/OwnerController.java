@@ -16,13 +16,13 @@ public class OwnerController {
         this.ownerService = ownerService;
     }
 
-    @GetMapping("/get")
+    @GetMapping
     public List<Owner> getAll(){
         return ownerService.getAllOwners();
 
     }
 
-    @PostMapping("/post")
+    @PostMapping
     public Owner saveOwner(@RequestBody Owner owner){
         return ownerService.saveOwner(owner);
     }
