@@ -1,14 +1,26 @@
 package com.example.demo.OwnerDemo;
 
+import jakarta.persistence.*;
+
 import java.util.List;
 import java.util.Objects;
 
+@Entity
 public class Owner {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private String username;
     private String email;
     private String address;
     private String company;
+
+    @ElementCollection
     private List<String> ownedLand ;
+
+    public Owner() {
+    }
 
     public Owner(String username, String email, String address, String company, List<String> ownedLand) {
         this.username = username;
@@ -62,11 +74,11 @@ public class Owner {
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
         Owner owner = (Owner) o;
-        return Objects.equals(username, owner.username) && Objects.equals(email, owner.email) && Objects.equals(address, owner.address) && Objects.equals(company, owner.company) && Objects.equals(ownedLand, owner.ownedLand);
+        return id == owner.id && Objects.equals(username, owner.username) && Objects.equals(email, owner.email) && Objects.equals(address, owner.address) && Objects.equals(company, owner.company) && Objects.equals(ownedLand, owner.ownedLand);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(username, email, address, company, ownedLand);
+        return Objects.hash(id, username, email, address, company, ownedLand);
     }
 }
