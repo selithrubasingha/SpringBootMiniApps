@@ -29,5 +29,10 @@ public class OwnerService {
         return ownerRepository.save(owner);
     }
 
+    public List<Owner> getAllOwners() {
+        return ownerRepository.findAll();
+    }
+
+
 
 }
